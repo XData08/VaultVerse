@@ -1,0 +1,19 @@
+﻿<UserControl x:Class="PasswordManagementSystem.Views.TemplateView.ButtonSubmitForm"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PasswordManagementSystem.Views.TemplateView"
+             mc:Ignorable="d" 
+             Resources="{StaticResource RD_Template}"
+             d:DesignHeight="80" d:DesignWidth="270">
+    <Grid>
+        <Grid>
+            <Button Style="{DynamicResource MyButton}"
+                    Background="{DynamicResource MainColor_Red}"
+                    Click="SubmitButton">
+                Submit
+            </Button>
+        </Grid>
+    </Grid>
+</UserControl>

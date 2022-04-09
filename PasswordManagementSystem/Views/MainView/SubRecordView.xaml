@@ -1,0 +1,52 @@
+﻿<UserControl x:Class="PasswordManagementSystem.Views.MainView.SubRecordView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PasswordManagementSystem.Views.MainView"
+             mc:Ignorable="d" 
+             Resources="{StaticResource RD_Views}"
+             d:DesignHeight="590" d:DesignWidth="220"
+             Background="White">
+    <Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="540" />
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0">
+                <TextBlock Grid.Row="0" Style="{DynamicResource SubView_Title}"
+                           Text="Templates"
+                           VerticalAlignment="Center" Margin="20,0,20,0"/>
+            </Grid>
+
+            <Grid Grid.Row="1" Margin="20,0,20, 0">
+                <StackPanel>
+                    <Button Style="{DynamicResource TemplateButtons}"
+                            Margin="0,0,0,10" Click="AddLecture">
+                        Lectures
+                    </Button>
+
+                    <Button Style="{DynamicResource TemplateButtons}"
+                            Margin="0,0,0,10" Click="AddList">
+                        To-do List
+                    </Button>
+
+                    <Button Style="{DynamicResource TemplateButtons}"
+                            Margin="0,0,0,10" Click="AddSchedule">
+                        Schedules
+                    </Button>
+
+                    <Button Style="{DynamicResource TemplateButtons}"
+                            Margin="0,0,0,10" Click="AddCollaboration">
+                        Collaborations
+                    </Button>
+                </StackPanel>
+
+            </Grid>
+
+        </Grid>
+    </Grid>
+</UserControl>
+ 

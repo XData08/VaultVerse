@@ -1,0 +1,310 @@
+﻿<Window x:Class="PasswordManagementSystem.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PasswordManagementSystem.Views.MainView"
+        Resources="{StaticResource RD_Main}"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="720" Width="1080"
+        WindowStyle="None"
+        WindowStartupLocation="CenterScreen"
+        AllowsTransparency="True">
+
+    <!-- Set Round Edges for the Window -->
+    <Window.Clip>
+        <RectangleGeometry Rect="0,0,1080, 720" RadiusX="25" RadiusY="25" />
+    </Window.Clip>
+    
+    <Grid>
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <!-- Title Bar -->
+        <Grid Grid.Row="0" Background="White"
+              MouseDown="MoveWindow">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="180" />
+                <ColumnDefinition Width="530" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+
+            <Grid Grid.Column="0">
+                <Grid.Background>
+                    <ImageBrush ImageSource="Logo.png" Stretch="None"/>
+                </Grid.Background>
+            </Grid>
+
+            <Grid Grid.Column="1"
+                  VerticalAlignment="Center"
+                  HorizontalAlignment="Left">
+                <Label Style="{DynamicResource Main_LabelButton}" 
+                       Content="Hello, "
+                       x:Name="GreetUser"
+                       FontSize="25"/>
+            </Grid>
+
+            <Grid Grid.Column="2">
+                <local:SearchBar x:Name="SearchBarView" Visibility="Visible" />
+            </Grid>
+        </Grid>
+
+        <!-- Main Content -->
+        <Grid Grid.Row="1">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="180" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="220" />
+            </Grid.ColumnDefinitions>
+
+            <!-- Navigation buttons -->
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="75" />
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="0">
+                    <StackPanel>
+                        <Grid Margin="0,0,0,10">
+                            <Button Style="{DynamicResource Main_RedButton}"
+                                    Background="{DynamicResource MainColor_Red}"
+                                    Click="ChangeViewHome" x:Name="ViewHomeButton">
+                                <Grid>
+
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="40" />
+                                        <ColumnDefinition Width="100" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <Grid Grid.Column="0">
+                                        <Image x:Name="ViewHomeImage"
+                                               Source="icon_whome.png" Stretch="None"/>
+                                    </Grid>
+
+                                    <Label Grid.Column="1" x:Name="ViewHomeLabel"
+                                   Foreground="{DynamicResource MainColor_White}"
+                                   Style="{DynamicResource Main_LabelButton}">
+                                        Home
+                                    </Label>
+                                </Grid>
+                            </Button>
+                        </Grid>
+
+                        <Grid Margin="0,0,0,10">
+                            <Button Style="{DynamicResource Main_RedButton}"
+                                    Click="ChangeViewCredential" x:Name="ViewCredentialButton">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="40" />
+                                        <ColumnDefinition Width="100" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <Grid Grid.Column="0">
+                                        <Image x:Name="ViewCredentialImage"
+                                               Source="icon_credentials.png" Stretch="None"/>
+                                    </Grid>
+
+                                    <Label Grid.Column="1" x:Name="ViewCredentialLabel"
+                                   Style="{DynamicResource Main_LabelButton}">
+                                        Credentials
+                                    </Label>
+                                </Grid>
+                            </Button>
+                        </Grid>
+
+                        <Grid Margin="0,0,0,10">
+                            <Button Style="{DynamicResource Main_RedButton}"
+                                    Click="ChangeViewRecord" x:Name="ViewRecordButton">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="40" />
+                                        <ColumnDefinition Width="100" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <Grid Grid.Column="0">
+                                        <Image Source="icon_records.png" 
+                                               x:Name="ViewRecordImage"
+                                               Stretch="None"/>
+                                    </Grid>
+
+                                    <Label Grid.Column="1" x:Name="ViewRecordLabel"
+                                   Style="{DynamicResource Main_LabelButton}">
+                                        Records
+                                    </Label>
+                                </Grid>
+                            </Button>
+                        </Grid>
+
+                        <Grid Margin="0,0,0,10">
+                            <Button Style="{DynamicResource Main_RedButton}"
+                                    Click="ChangeViewGallery" x:Name="ViewGalleryButton">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="40" />
+                                        <ColumnDefinition Width="100" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <Grid Grid.Column="0">
+                                        <Image Source="icon_image.png" 
+                                               x:Name="ViewGalleryImage"
+                                               Stretch="None"/>
+                                    </Grid>
+
+                                    <Label Grid.Column="1" x:Name="ViewGalleryLabel"
+                                   Style="{DynamicResource Main_LabelButton}">
+                                        Gallery
+                                    </Label>
+                                </Grid>
+                            </Button>
+                        </Grid>
+
+                        <Grid Margin="0,0,0,10">
+                            <Button Style="{DynamicResource Main_RedButton}"
+                                    Click="ChangeViewDocument" x:Name="ViewDocumentButton">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="40" />
+                                        <ColumnDefinition Width="100" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <Grid Grid.Column="0">
+                                        <Image Source="icon_document.png" 
+                                                x:Name="ViewDocumentImage"
+                                               Stretch="None"/>
+                                    </Grid>
+
+                                    <Label Grid.Column="1" x:Name="ViewDocumentLabel"
+                                   Style="{DynamicResource Main_LabelButton}">
+                                        Documents
+                                    </Label>
+                                </Grid>
+                            </Button>
+                        </Grid>
+
+                        <Grid Margin="0,0,0,10">
+                            <Button Style="{DynamicResource Main_RedButton}" 
+                                    Click="ChangeViewHelp" x:Name="ViewHelpButton">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="40" />
+                                        <ColumnDefinition Width="100" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <Grid Grid.Column="0">
+                                        <Image Source="icon_help.png" 
+                                               x:Name="ViewHelpImage"
+                                               Stretch="None"/>
+                                    </Grid>
+
+                                    <Label Grid.Column="1" x:Name="ViewHelpLabel"
+                                   Style="{DynamicResource Main_LabelButton}">
+                                        Help
+                                    </Label>
+                                </Grid>
+                            </Button>
+                        </Grid>
+                    </StackPanel>
+                </Grid>
+
+                <Grid Grid.Row="1" Margin="0,0,0,30">
+                    <Button Style="{DynamicResource Main_RedButton}"
+                            Background="{DynamicResource MainColor_Red}"
+                            Click="UserMenu">
+                        <Grid>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="40" />
+                                <ColumnDefinition Width="100" />
+                            </Grid.ColumnDefinitions>
+                            <Border Grid.Column="0" Width="25" Height="25"
+                                    Style="{DynamicResource Main_BorderLayout}"
+                                    Background="White">
+                                <Grid>
+                                    <Image Source="profile_0.png" Stretch="None"
+                                       x:Name="UserProfile"/>
+                                </Grid>
+                            </Border>
+                            
+
+                            <Label Grid.Column="1" 
+                                   x:Name="UserFirstName"
+                                   Foreground="{DynamicResource MainColor_White}"
+                                   Style="{DynamicResource Main_LabelButton}" 
+                                   Content=""/>
+                        </Grid>
+                    </Button>
+                </Grid>
+            </Grid>
+
+            <Border Grid.Column="1"
+                Style="{DynamicResource Main_BorderLayout}"
+                Margin="0,0,0,30">
+
+                <Grid>
+                    <!-- Home Content -->
+                    <local:MainHomeView Visibility="Visible"
+                                        x:Name="MainHomeView"/>
+
+                    <!-- Credentials Content -->
+                    <local:MainCredentialView Visibility="Collapsed" 
+                                              x:Name="MainCredentialView"/>
+
+                    <!-- Record Content -->
+                    <local:MainRecordView Visibility="Collapsed" 
+                                          x:Name="MainRecordView"/>
+
+                    <!-- Image Content -->
+                    <local:MainGalleryView Visibility="Collapsed" 
+                                           x:Name="MainGalleryView"/>
+
+                    <!-- Document Content -->
+                    <local:MainDocumentView Visibility="Collapsed" 
+                                            x:Name="MainDocumentView"/>
+
+                    <!-- Help Content -->
+                    <local:MainHelpView Visibility="Collapsed"
+                                        x:Name="MainHelpView"/>
+
+
+                </Grid>
+            </Border>
+
+            <Grid Grid.Column="2"
+                  Margin="0,0,0,30">
+
+                <!-- Sub Home Content -->
+                <local:SubHomeView Visibility="Visible" 
+                                   x:Name="SubHomeView"/>
+
+                <!-- Sub Credential Content -->
+                <local:SubCredentialView Visibility="Collapsed" 
+                                         x:Name="SubCredentialView"/>
+
+                <!-- Sub Records Content -->
+                <local:SubRecordView Visibility="Collapsed" 
+                                     x:Name="SubRecordView"/>
+    
+                <!-- Sub Gallery Content -->
+                <local:SubGalleryView Visibility="Collapsed"
+                                      x:Name="SubGalleryView"/>
+
+                <!-- Sub Documents Content -->
+                <local:SubDocumentView Visibility="Collapsed" 
+                                       x:Name="SubDocumentView"/>
+
+                <!-- Sub Help Content -->
+                <local:SubHelpView Visibility="Collapsed"
+                                   x:Name="SubHelpView"/>
+
+            </Grid>
+        </Grid>
+    </Grid>
+    
+</Window>

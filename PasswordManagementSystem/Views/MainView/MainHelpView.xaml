@@ -1,0 +1,41 @@
+﻿<UserControl x:Class="PasswordManagementSystem.Views.MainView.MainHelpView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PasswordManagementSystem.Views.MainView"
+             mc:Ignorable="d" 
+             Resources="{StaticResource RD_Views}"
+             d:DesignHeight="590" d:DesignWidth="680"
+             Background="#F5F5F5">
+    <Grid>
+        <Border Style="{DynamicResource Sub_BorderLayout}"
+                Margin="20,20,20,20">
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="220"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="0">
+                    <Grid.Background>
+                        <ImageBrush ImageSource="HelpLogo2.png" Stretch="None" />
+                    </Grid.Background>
+                </Grid>
+
+                <Grid Grid.Row="1">
+                    <TextBlock Margin="50,25,50,25"
+                               TextWrapping="Wrap"
+                                TextAlignment="Justify"
+                               FontFamily="Montserrat"
+                               FontSize="14" LineHeight="25">
+                    <Span FontWeight="Bold">VaultVerse</Span> is a Password Management System Desktop Application for securing individuals' credentials, records, images, and documents in a database that can guarantee your personal information in a safe domain. VaultVerse offers a user-friendly environment, minimalist user interface (UI), and secured transactions with the use of your email. 
+                    <LineBreak /><LineBreak />
+                    The System provides a variety of templates so you can easily store your data in the database such that no hackers can invade your personal space. Moreover, XData will provide numerous features along the run so that your information will not falter in the hands of others. VaultVerse unique security system can assure your negative thoughts from invaders.
+                    </TextBlock>
+                </Grid>
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>

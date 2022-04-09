@@ -1,0 +1,89 @@
+﻿<Window x:Class="PasswordManagementSystem.TemplateDocument.TemplateFolder"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PasswordManagementSystem.Views.TemplateView"
+        mc:Ignorable="d"
+        Title="TemplateFolder" Height="720" Width="350"
+        Resources="{StaticResource RD_Template}"
+        WindowStartupLocation="CenterScreen"
+        AllowsTransparency="True"
+        WindowStyle="None">
+
+    <Window.Clip>
+        <RectangleGeometry Rect="0,0,350,720"
+                           RadiusX="30" RadiusY="30" />
+    </Window.Clip>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="55" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="20" />
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Background="Transparent"
+              Margin="20,0,20,0" MouseDown="MoveWindow">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="235" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Column="0">
+                <TextBlock Style="{DynamicResource TitleTemplate}"
+                    Text="FILE"
+                    />
+            </Grid>
+
+            <Grid Grid.Column="1">
+                <Grid>
+                    <Button Background="#6DF054" 
+                            HorizontalAlignment="Left"
+                            Style="{DynamicResource TitleButtons}"
+                            Click="MinimizeWindow"/>
+                    <Button Background="#F0E054" 
+                            HorizontalAlignment="Center"
+                            Style="{DynamicResource TitleButtons}"
+                            />
+                    <Button Background="#F05454" 
+                            HorizontalAlignment="Right"
+                            Style="{DynamicResource TitleButtons}"
+                            Click="ExitWindow"/>
+                </Grid>
+            </Grid>
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <Border Style="{DynamicResource Main_BorderLayout}"
+                    Margin="20,0,20,0">
+                <ScrollViewer VerticalScrollBarVisibility="Hidden">
+                    <Grid>
+                        <StackPanel>
+                            <TextBox Style="{DynamicResource InputBox}"
+                                     Text="Title" Margin="0,20,0,0"
+                                     x:Name="TitleBox"
+                                     MaxLength="50"
+                                     KeyDown="TitleBox_KeyDown"
+                                     KeyUp="Reset_KeyUp"/>
+
+                            <TextBox Style="{DynamicResource InputBox}"
+                                     Text="Notes" Margin="0,20,0,0"
+                                     Height="400" TextWrapping="Wrap"
+                                     VerticalContentAlignment="Top"
+                                     Padding="10, 10,10, 10" 
+                                     x:Name="NoteBox"
+                                     KeyDown="NoteBox_KeyDown"
+                                     KeyUp="Reset_KeyUp"/>
+
+                            <Grid Margin="0,20,0,20" x:Name="ButtonArea">
+                           
+                            </Grid>
+                        </StackPanel>
+                    </Grid>
+                </ScrollViewer>
+            </Border>
+        </Grid>
+
+    </Grid>
+</Window>

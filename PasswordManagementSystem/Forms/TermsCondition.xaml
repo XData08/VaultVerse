@@ -1,0 +1,95 @@
+﻿<Window x:Class="PasswordManagementSystem.Forms.TermsCondition"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PasswordManagementSystem.Forms"
+        mc:Ignorable="d"
+        Title="TermsCondition" Height="500" Width="350"
+        WindowStyle="None"
+        Resources="{StaticResource RD_User}"
+        AllowsTransparency="True"
+        WindowStartupLocation="CenterScreen">
+
+    <Window.Clip>
+        <RectangleGeometry Rect="0,0,350,500" 
+                           RadiusX="10" RadiusY="10" />
+    </Window.Clip>
+    
+    <Grid>
+
+        <Grid Background="{DynamicResource MainColor_White}"
+              MouseDown="MoveWindow">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="45" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0" Margin="20,0,20,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="240" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Grid Grid.Column="0">
+                    <TextBlock VerticalAlignment="Center"
+                               FontFamily="Montserrat"
+                               FontWeight="Bold"
+                               FontSize="16"
+                               Foreground="{DynamicResource MainColor_Red}">
+                        <Span>Terms and Condition</Span>
+                    </TextBlock>
+                </Grid>
+
+                <Grid Grid.Column="1">
+                    <Grid>
+                        <Button Background="#6DF054" 
+                            HorizontalAlignment="Left"
+                            Style="{DynamicResource TitleButtons}"
+                            Click="MinimizeWindow"/>
+                        <Button Background="#F0E054" 
+                            HorizontalAlignment="Center"
+                            Style="{DynamicResource TitleButtons}"
+                            />
+                        <Button Background="#F05454" 
+                            HorizontalAlignment="Right"
+                            Style="{DynamicResource TitleButtons}"
+                            Click="ExitWindow"/>
+                    </Grid>
+                </Grid>
+            </Grid>
+
+            <Border Grid.Row="1"
+                  Margin="20,0,20,20"
+                  Background="White" CornerRadius="10">
+                <Grid>
+                    <ScrollViewer VerticalScrollBarVisibility="Hidden">
+                        <TextBlock Margin="20,20,20,20"
+                                   FontFamily="Montserrat"
+                                   TextWrapping="Wrap"
+                                   FontSize="14"
+                                   TextAlignment="Justify"
+                                   LineHeight="15">
+                            Software Terms and Conditions The following Terms and Conditions apply to customer use of Cal‐Tek Co., Inc.’s calibration database utilizing iPortal interface software. 
+                <LineBreak /> <LineBreak/>
+1. License You are granted  a limited,  revocable, nonexclusive, nonsublicensable, nontransferable right and license to access remotely and use Cal‐Tek Co., Inc.’s calibration database in the iPortal interface software, and/or such other systems, information and materials that Cal‐Tek Co., Inc. may make available to you by issuing an access code and password (Cal‐Tek Co., Inc.’s calibration datab ase in the IPortal interface software and/or such other systems, information and materials being hereinafter referred to as the “Client Calibration Database”). Use of this Client Calibration Database is restricted to authorized us ers. Unauthorized, illegal or improper use may result in disciplinary action and civil or criminal prosecution. Notwithstanding anything in this Agreement to the contrary, all use of the Client Calibration Database shall be strictly in accordance with Cal‐Tek Co., Inc. policies and applicable laws. You shall, at all times, limit your use of the Client Calibration Database to access information regarding your company’s instruments only and shall not use the Client Calibration Database to access (or attempt to access) third party information. 
+                    <LineBreak /> <LineBreak/>
+2. Ownership The Client Calibration Database is licensed, not sold. The Client Calibration Database (including, without limitation, its layout, interfaces, functionality and incorporated images, text and other media) is the sole and exclusive property of Cal‐Tek Co., Inc. and its licensors and is protected by domestic and international copyright and other intellectual property laws. 
+                    <LineBreak /> <LineBreak/>
+3. Access to services In order to permit you to access the Client Calibration Database, Cal‐Tek Co., Inc. will provide you with one or more access code(s) and password(s). You shall not divulge or disclose any access code or password to any person outside of your company. You may not use any access code or password should your employment with your current employer be terminated for any re ason. 
+                    <LineBreak /> <LineBreak/>
+4. Verification You acknowledge that Cal‐Tek Co., Inc. may monitor your activities on the Client Calibration Database at Cal‐Tek Co., Inc.’s discretion, in accordance with applicable laws, and you consent to such monitoring. In addition, upon notice from Cal‐Tek Co., Inc., you shall provide Cal ‐Tek  Co., Inc. with such information, access, and assistance as they may reasonably require. 
+                    <LineBreak /> <LineBreak/>
+5. Disclaimer The Client Calibration Database and access thereto are provided “as is” without any warranty of any kind, and your use of the services is solely at your own risk. Cal‐Tek Co., Inc. does not warrant that the Client Calibration Database or access  thereto will meet your requirements or that the operation will be uninterrupted or error‐free. Cal‐Tek Co., Inc. does not warrant that the information contained in the Client Calibration Database is accurate or error‐free. 
+                    <LineBreak /> <LineBreak/>  
+6. Limitation of liability In no event shall Cal‐Tek Co., Inc. be liable for any damages, whether direct, indirect, special, consequential, punitive, exemplary or otherwise, including loss of revenues, income, profits or savings, arising out of or relating to the Client Calibration Database or access (or lack of access) thereto. Terms and Conditions subject to change at the sole discretion of Cal‐Tek Co., Inc.
+                        </TextBlock>
+                    </ScrollViewer>
+                </Grid>
+            </Border>
+
+
+        </Grid>
+        
+    </Grid>
+</Window>

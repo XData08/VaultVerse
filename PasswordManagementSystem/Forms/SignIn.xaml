@@ -1,0 +1,131 @@
+﻿<Window x:Class="PasswordManagementSystem.Forms.SignIn"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PasswordManagementSystem.Views.FormView"
+        Resources="{StaticResource RD_Form}"
+        mc:Ignorable="d"
+        Title="SignIn" Height="450" Width="800"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        WindowStartupLocation="CenterScreen">
+
+    <!-- Set Round Edges for the Window -->
+    <Window.Clip>
+        <RectangleGeometry Rect="0,0,800, 450" RadiusX="20" RadiusY="20" />
+    </Window.Clip>
+
+    <!-- Main Content -->
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="350" />
+        </Grid.ColumnDefinitions>
+
+        <!-- Left Side Content -->
+        <Grid Grid.Column="0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+            </Grid>
+
+            <!-- Set the Window Logo -->
+            <StackPanel Grid.Row="0" 
+                        Orientation="Horizontal"
+                        Margin="20,15,20,420">
+                
+                <TextBlock Text="X" Style="{DynamicResource Form_Subtext}" 
+                           Foreground="{DynamicResource MainColor_Red}"/>
+                
+                <TextBlock Text="Data" Style="{DynamicResource Form_Subtext}" 
+                           Foreground="{DynamicResource MainColor_Black}"/>
+               
+            </StackPanel>
+
+            <!-- Sign In Content -->
+            <StackPanel  Grid.Row="1" Margin="75, 68, 75, 68"
+                            x:Name="SignInForm_Container_1">
+                <TextBlock Text="Sign in to Account" 
+                        Style="{DynamicResource Form_Heading}"
+                        Margin="0,0,0,20"
+                        Foreground="{DynamicResource MainColor_Red}"/>
+
+                <Label Style="{DynamicResource Form_Line}"
+                    Background="{DynamicResource MainColor_Red}"
+                    Margin="0,0,0,45" />
+
+                <TextBox Text="Email" x:Name="TextBoxEmail"
+                        KeyDown="TextBoxEmail_KeyDown"
+                        KeyUp="Reset_KeyUp"
+                        MaxLength="200"
+                        Style="{DynamicResource Form_TextBox}"
+                        Margin="0,0,0,25"
+                        Foreground="#707070"/>
+
+                <TextBox  x:Name="TextBoxPassword" Text="Password"
+                        KeyDown="TextBoxPassword_KeyDown"
+                        KeyUp="Reset_KeyUp"
+                          MaxLength="300"
+                        FontFamily="Password"
+                        Style="{DynamicResource Form_TextBox}"
+                        Margin="0,0,0,20"
+                        Foreground="#707070"/>
+
+                <Button Content="Forgot Password?" 
+                    HorizontalAlignment="Right"
+                    Margin="0,0,0,20"
+                    Click="Form_ForgotPassword"
+                    Style="{DynamicResource Form_ButtonText}"/>
+
+                <Button Content="Sign In"
+                    Click="Form_SignIn"
+                    Style="{DynamicResource Form_RedButton}"/>
+            </StackPanel>
+                
+   
+            <!-- To Switch Window to Window -->
+            <StackPanel Grid.Row="1" x:Name="SignInForm_Container_2"
+                        Visibility="Collapsed" Margin="0,40,0,0">
+                <local:SignInVerification x:Name="SignInVerfication"
+                                      Visibility="Collapsed"/>
+                <local:SignInForgot x:Name="SignInForgot" 
+                                Visibility="Collapsed"/>
+            </StackPanel>
+            
+        </Grid>
+
+        <!-- Right Side Content -->
+        <Grid Grid.Column="1" 
+              MouseDown="MoveWindow"
+              Background="{DynamicResource Form_GradientColor}">
+
+            <StackPanel Margin="63, 114, 63, 114">
+                <TextBlock Text="Hello, Friend!" 
+                           Style="{DynamicResource Form_Heading}"
+                           Margin="0,0,0,20"
+                           Foreground="{DynamicResource MainColor_White}"
+                           />
+                <Label Style="{DynamicResource Form_Line}"
+                       Background="{DynamicResource MainColor_White}"
+                       Margin="0,0,0,45" />
+
+                <TextBlock Style="{DynamicResource Form_Subtext}"
+                           Foreground="{DynamicResource MainColor_White}"
+                           FontWeight="Regular" Margin="0,0,0,40">
+                    Fill up personal information
+                    <LineBreak />
+                    and start journey with us.
+                </TextBlock>
+
+                <Button Style="{DynamicResource Form_WhiteButton}"
+                        Content="Sign Up"
+                        Click="Form_SignUp"/>
+
+            </StackPanel>
+        </Grid>
+
+    </Grid>
+</Window>

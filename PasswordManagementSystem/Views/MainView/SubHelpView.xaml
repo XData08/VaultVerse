@@ -1,0 +1,202 @@
+﻿<UserControl x:Class="PasswordManagementSystem.Views.MainView.SubHelpView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PasswordManagementSystem.Views.MainView"
+             mc:Ignorable="d" 
+             Resources="{StaticResource RD_Views}"
+             d:DesignHeight="590" d:DesignWidth="220"
+             Background="White">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="540" />
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <TextBlock Style="{DynamicResource SubView_Title}"
+               Text="Visit us on"
+               VerticalAlignment="Center" Margin="20,0,20,0"/>
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <StackPanel>
+                <Border Style="{DynamicResource Main_BorderLayout}"
+                    Height="60" Width="180" Margin="0,10,0,10">
+                    <Grid Margin="0,10,0,10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="50" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <Grid Grid.Row="1">
+                            <Grid.Background>
+                                <ImageBrush ImageSource="icon_facebook.png" Stretch="None"/>
+                            </Grid.Background>
+                        </Grid>
+
+                        <Grid Grid.Column="1">
+                            <TextBlock VerticalAlignment="Center"
+                                   Style="{DynamicResource SubView_Title}">           
+                            <Hyperlink NavigateUri="http://www.facebook.com" 
+                                       TextDecorations="None"
+                                       RequestNavigate="Hyperlink_RequestNavigate">
+                                <Span Foreground="{DynamicResource MainColor_Black }">
+                                    Facebook
+                                </Span>
+                            </Hyperlink>
+                            </TextBlock>
+                        </Grid>
+                    </Grid>
+                </Border>
+
+                <Border Style="{DynamicResource Main_BorderLayout}"
+                    Height="60" Width="180" Margin="0,10,0,10">
+                    <Grid Margin="0,10,0,10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="50" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <Grid Grid.Row="1">
+                            <Grid.Background>
+                                <ImageBrush ImageSource="icon_instagram.png" Stretch="None"/>
+                            </Grid.Background>
+                        </Grid>
+
+                        <Grid Grid.Column="1">
+                            <TextBlock VerticalAlignment="Center"
+                                   Style="{DynamicResource SubView_Title}">           
+                            <Hyperlink NavigateUri="http://www.instagram.com" 
+                                       TextDecorations="None"
+                                       RequestNavigate="Hyperlink_RequestNavigate">
+                                <Span Foreground="{DynamicResource MainColor_Black }">
+                                    Instagram
+                                </Span>
+                            </Hyperlink>
+                            </TextBlock>
+                        </Grid>
+                    </Grid>
+                </Border>
+
+                <Border Style="{DynamicResource Main_BorderLayout}"
+                    Height="60" Width="180" Margin="0,10,0,10">
+                    <Grid Margin="0,10,0,10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="50" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <Grid Grid.Row="1">
+                            <Grid.Background>
+                                <ImageBrush ImageSource="icon_github.png" Stretch="None"/>
+                            </Grid.Background>
+                        </Grid>
+
+                        <Grid Grid.Column="1">
+                            <TextBlock VerticalAlignment="Center"
+                                   Style="{DynamicResource SubView_Title}">           
+                            <Hyperlink NavigateUri="http://www.github.com" 
+                                       TextDecorations="None"
+                                       RequestNavigate="Hyperlink_RequestNavigate">
+                                <Span Foreground="{DynamicResource MainColor_Black }">
+                                    GitHub
+                                </Span>
+                            </Hyperlink>
+                            </TextBlock>
+                        </Grid>
+                    </Grid>
+                </Border>
+
+                <Border Style="{DynamicResource Main_BorderLayout}"
+                    Height="60" Width="180" Margin="0,10,0,10">
+                    <Grid Margin="0,10,0,10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="50" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <Grid Grid.Row="1">
+                            <Grid.Background>
+                                <ImageBrush ImageSource="icon_youtube.png" Stretch="None"/>
+                            </Grid.Background>
+                        </Grid>
+
+                        <Grid Grid.Column="1">
+                            <TextBlock VerticalAlignment="Center"
+                                   Style="{DynamicResource SubView_Title}">           
+                            <Hyperlink NavigateUri="http://www.youtube.com" 
+                                       TextDecorations="None"
+                                       RequestNavigate="Hyperlink_RequestNavigate">
+                                <Span Foreground="{DynamicResource MainColor_Black }">
+                                    YouTube
+                                </Span>
+                            </Hyperlink>
+                            </TextBlock>
+                        </Grid>
+                    </Grid>
+                </Border>
+
+                <Border Style="{DynamicResource Main_BorderLayout}"
+                    Height="60" Width="180" Margin="0,10,0,10">
+                    <Grid Margin="0,10,0,10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="50" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <Grid Grid.Row="1">
+                            <Grid.Background>
+                                <ImageBrush ImageSource="icon_website.png" Stretch="None"/>
+                            </Grid.Background>
+                        </Grid>
+
+                        <Grid Grid.Column="1">
+                            <TextBlock VerticalAlignment="Center"
+                                   Style="{DynamicResource SubView_Title}">           
+                            <Hyperlink NavigateUri="http://www.google.com" 
+                                       TextDecorations="None"
+                                       RequestNavigate="Hyperlink_RequestNavigate">
+                                <Span Foreground="{DynamicResource MainColor_Black }">
+                                    Website
+                                </Span>
+                            </Hyperlink>
+                            </TextBlock>
+                        </Grid>
+                    </Grid>
+                </Border>
+
+                <Border Style="{DynamicResource Main_BorderLayout}"
+                    Height="60" Width="180" Margin="0,10,0,10">
+                    <Grid Margin="0,10,0,10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="50" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <Grid Grid.Row="1">
+                            <Grid.Background>
+                                <ImageBrush ImageSource="icon_email.png" Stretch="None"/>
+                            </Grid.Background>
+                        </Grid>
+
+                        <Grid Grid.Column="1">
+                            <TextBlock VerticalAlignment="Center"
+                                   Style="{DynamicResource SubView_Title}">           
+                            <Hyperlink NavigateUri="http://www.gmail.com" 
+                                       TextDecorations="None"
+                                       RequestNavigate="Hyperlink_RequestNavigate">
+                                <Span Foreground="{DynamicResource MainColor_Black }">
+                                    Email
+                                </Span>
+                            </Hyperlink>
+                            </TextBlock>
+                        </Grid>
+                    </Grid>
+                </Border>
+
+            </StackPanel>
+        </Grid>
+    </Grid>
+</UserControl>

@@ -1,0 +1,47 @@
+﻿<UserControl x:Class="PasswordManagementSystem.Views.FormView.SignUpVerification"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PasswordManagementSystem.Views.FormView"
+             mc:Ignorable="d" 
+             Resources="{StaticResource RD_Form}"
+             d:DesignHeight="410" d:DesignWidth="450"
+             Background="White">
+    <Grid>
+        
+        <!-- Sign Up Verification Window -->
+        <StackPanel Margin="75,55,75,85">
+
+            <TextBlock Text="Create Account" 
+                           Style="{DynamicResource Form_Heading}"
+                           Margin="0,0,0,20"
+                           Foreground="{DynamicResource MainColor_Red}"/>
+
+            <Label Style="{DynamicResource Form_Line}"
+                       Background="{DynamicResource MainColor_Red}"
+                       Margin="0,0,0,45" />
+
+            <TextBlock Style="{DynamicResource Form_Subtext}"
+                       FontWeight="Regular"
+                       Margin="0,0,0,20">
+                To verify your account, we sent
+                <LineBreak />
+                a PIN code to your gmail
+            </TextBlock>
+
+            <TextBox Text="PIN Code" x:Name="TextBoxPinCode"
+                     KeyDown="TextBoxPinCode_KeyDown"
+                     KeyUp="Reset_KeyUp"
+                     MaxLength="35"
+                     Style="{DynamicResource Form_TextBox}"
+                     Margin="0,0,0,25"
+                     Foreground="#707070"/>
+
+            <Button Content="Submit" x:Name="SubmitButton"
+                    Click="SubmitButton_Click" 
+                    Style="{DynamicResource Form_RedButton}"/>
+        </StackPanel>
+        
+    </Grid>
+</UserControl>
